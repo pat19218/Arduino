@@ -3,8 +3,8 @@
 #include <ESP8266WebServer.h>
 
 /*Put your SSID & Password*/
-const char* ssid = "TIGO-AEAF";  // Enter SSID here
-const char* password = "2NB112101017";  //Enter Password here
+const char* ssid = "YoWifi";  // Enter SSID here
+const char* password = "12345678";  //Enter Password here
 
 ESP8266WebServer server(80);
 
@@ -108,19 +108,19 @@ String SendHTML(uint8_t led1stat,uint8_t led2stat){
   ptr +="</style>\n";
   ptr +="</head>\n";
   ptr +="<body>\n";
-  ptr +="<h1>ESP32 Web Server</h1>\n";
+  ptr +="<h1>ESP8266 Web Server</h1>\n";
     ptr +="<h3>Using Station(STA) Mode</h3>\n";
   
    if(led1stat)
   {ptr +="<p>LED1 Status: ON</p><a class=\"button button-off\" href=\"/led1off\">OFF</a>\n";}
   else
   {ptr +="<p>LED1 Status: OFF</p><a class=\"button button-on\" href=\"/led1on\">ON</a>\n";}
-
+  
   if(led2stat)
-  {ptr +="<p>LED2 Status: ON</p><a class=\"button button-off\" href=\"/led2off\">OFF</a>\n";}
+  {ptr +=" <p>LED2 Status: ON</p><a class=\"button button-off\" href=\"/led2off\">OFF</a>\n ";}
   else
   {ptr +="<p>LED2 Status: OFF</p><a class=\"button button-on\" href=\"/led2on\">ON</a>\n";}
-
+ 
   ptr +="</body>\n";
   ptr +="</html>\n";
   return ptr;
